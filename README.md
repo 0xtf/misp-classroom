@@ -5,7 +5,9 @@
 ## What?
 A wrapper script and a Terraform configuration file that uses the latest build of [MISP Cloud](https://github.com/MISP/misp-cloud) to deploy AWS EC2 instances with a timer for termination *(ephemeral instances)*.
 
-## Demo (goes to YouTube)
+## Demo
+
+Clicking on the image will take you to YouTube. 
 
 [![MISP-Classroom](http://img.youtube.com/vi/puPAudfTTOo/0.jpg)](http://www.youtube.com/watch?v=puPAudfTTOo "MISP Classroom")
 
