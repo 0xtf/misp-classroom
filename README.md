@@ -8,4 +8,4 @@ A wrapper script and a Terraform configuration file that uses the latest build o
 ## ToDo
 - [ ] Check the existence of TF config
 - [ ] Check the existence of TF
-- [ ] Tain SSH key after deployment
+- [ ] Taint SSH key after deployment
