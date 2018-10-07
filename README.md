@@ -12,4 +12,5 @@ A wrapper script and a Terraform configuration file that uses the latest build o
 ## ToDo
 - [ ] Check the existence of TF config in path
 - [ ] Check the existence of TF in path
+- [ ] Clean output - TF goes to build log and only OUTPUT from TF is shown
 - [ ] Taint SSH key after deployment
