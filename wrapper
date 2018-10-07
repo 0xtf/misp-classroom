@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Terraform location for both executable and .tf
+TF=/home/ubuntu/terraform
+
+cd $TF
+
+# User input for number of instances
+clear
+echo -n "How many instances would you like?
+Type a number from 1 to 30 and press [ENTER]: "
+read QUANTITY
+
+# Check if it's a valid answer
+if [[ $QUANTITY -ge 1 && $QUANTITY -le 30 ]] ; then
+  
+	# Perform normal operations for deployment
+	sed -i "s/  count.*/  count                                = \"$QUANTITY\"/g" $TF/classroom.tf
+      	echo "Initiating deployment ..."
+	
+	# Initialize working directory
+	$TF/terraform init -input=false >> /dev/null 2>&1
+	# Create a plan for deployment 
+	$TF/terraform plan -out tfplan -input=false
+	# Start deployment via terraform
+	$TF/terraform apply -input=false tfplan
+	
+	# Print the output configured in classrom, which is the IP addresses of the instances
+	#$TF/terraform output ip
+
+	# Taint sensitive information
+	#$TF/terraform taint tls_private_key.bootstrap_private_key
+	#$TF/terraform taint aws_key_pair.bootstrap_generated_key
+	
+	exit 0;
+else
+	# Perform exit routine. No valid answer
+	echo "No valid arguments. Quitting!"
+	exit 1; 
+fi
+
